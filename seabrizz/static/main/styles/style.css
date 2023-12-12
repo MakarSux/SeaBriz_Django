@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.body{
+    display: flex;
+}
+
+aside{
+    background: linear-gradient(272deg, rgba(0, 64, 123, 0.72) 3.28%, #0085FF 99.88%);
+    width: 260px;
+    height: 100vh;
+}
+
+header{
+    background: linear-gradient(90deg, rgba(0, 64, 123, 0.72) 0%, #0085FF 100%);
+    width: 100%;
+    height: 57px;
+    position: relative;
+    display: flex;
+}
+
+header h1{
+    font-size: 20px;
+    font-weight: 300;
+    margin: auto 36px;
+    color: #FFF;
+}
+
+.logo{
+    display: flex;
+    padding: 8px 0 52px 20px;
+}
+
+.logo img{
+    padding-left: 7px;
+    width: 50px;
+    height: 50px;
+}
+
+.logo p{
+    margin: auto 0;
+    font-size: 32px;
+    font-weight: 400;
+    color: #FFF;
+}
+
+aside li{
+    list-style-type: none;
+    padding-bottom: 21px;
+    padding-left: 24px;
+    color: #FFF;
+}
+
+aside li:nth-child(5){
+    padding-top: 55px;
+    display: flex;
+}
+
+aside li:nth-child(5) img{
+    margin: auto 8px;
+}
+
+aside li a{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+aside li a:hover{
+    border-bottom: 3px solid #FF0101;
+    transition: all ease-in-out 0.15s;
+}
+
+.content{
+    position: absolute;
+    width: 75%;
+    top: 80px;
+    left: 287px;
+}
+
+.filter{
+    width: 100%;
+    height: 85px;
+    border-radius: 5px;
+    background: rgba(255, 122, 0, 0.65);
+    color: #FFF;
+}
+
+.filter .filter__name{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 7px 0 12px 10px;
+}
+
+.filter .filter__input{
+    margin-left: 13px;
+}
+
+.filter .filter__input label{
+    font-size: 16px;
+    padding-right: 24px;
+}
+
+.filter .filter__input input,
+.filter .filter__input button{
+    width: 105px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: 31px;
+}
+
+.filter .filter__input button{
+    border-radius: 4px;
+    background: #0B4FFE;
+    color: #FFF;
+    border: none;
+    font-size: 12px;
+}
