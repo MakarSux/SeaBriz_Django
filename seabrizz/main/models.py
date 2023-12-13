@@ -6,12 +6,16 @@ class SeaFood(models.Model):
     proiz = models.CharField('Производиьтель', max_length= 75)
     price = models.CharField('Цена', max_length=75)
     descr = models.TextField('Описание')
-    image = models.ImageField(upload_to='images/')
+    photo = models.ImageField(upload_to='images/')
     quantity = models.IntegerField('Количество', default=0)
+    objects = models.Manager()
+    @property
+    def photo_url(self):
+        if self.photo and hasattr(self.photo, 'url'):
+            return self.photo.url
 
     def __unicode__(self):
         return self.name
-
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'

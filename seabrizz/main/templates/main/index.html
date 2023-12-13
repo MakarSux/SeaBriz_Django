@@ -18,15 +18,18 @@
         <h2 class="section__name">Товары</h2>
 
         <div class="products">
+            {% for el in prods %}
             <div class="product">
-                <img src="{% static 'main/img/prod_fish.png' %}" alt="">
-                <p class="product__price">1200 руб.</p>
-                <p class="product__name">Филе лосося</p>
+                <img src=" {{ el.photo.url }} " alt="image">
+                <p class="product__price">{{ el.price }}</p>
+                <p class="product__name">{{ el.name }}</p>
+                <p class="product__name">{{ el.quantity }}</p>
                 <div class="produtcs__btns">
                     <button class="btn btn-danger">Удалить</button>
                     <button class="btn btn-success">Изменить</button>
                     <button class="btn btn-warning">В корзину</button>
                 </div>
             </div>
+            {% endfor %}
         </div>
 {% endblock %}
