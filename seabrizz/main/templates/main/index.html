@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
         <div class="filter">
@@ -12,5 +13,20 @@
                 <input type="text" value="">
                 <button>Фильтровать</button>
             </form>
+        </div>
+
+        <h2 class="section__name">Товары</h2>
+
+        <div class="products">
+            <div class="product">
+                <img src="{% static 'main/img/prod_fish.png' %}" alt="">
+                <p class="product__price">1200 руб.</p>
+                <p class="product__name">Филе лосося</p>
+                <div class="produtcs__btns">
+                    <button class="btn btn-danger">Удалить</button>
+                    <button class="btn btn-success">Изменить</button>
+                    <button class="btn btn-warning">В корзину</button>
+                </div>
+            </div>
         </div>
 {% endblock %}
