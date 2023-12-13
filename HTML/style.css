@@ -204,3 +204,69 @@ aside li a:hover{
 .products .product .produtcs__btns button:nth-child(1){
     margin-right: 100px;
 }
+
+
+.form_section{
+    width: 705px;
+    height: calc(800px - 36px);
+    border-radius: 5px;
+    background: rgba(255, 122, 0, 0.65);
+    position: relative;
+}
+
+.form_section .add__prod{
+    width: 590px;
+    padding-top: 36px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_section .add__prod input,
+.form_section .add__prod textarea{
+    margin-bottom: 21px;
+    border: none;
+}
+
+.form_section .add__prod .form__name{
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+}
+
+.form_section .add__prod input{
+    height: 42px;
+}
+
+.form_section .add__prod input:nth-child(6){
+    width: 130px;
+}
+
+.form_section .add__prod textarea{
+    height: 150px;
+}
+
+.form_section .add__prod button{
+    width: 192px;
+}
+
+.form_section button.add{
+    width: 133px;
+    height: 42px;
+    background: #621F1F;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    border: none;
+    position: absolute;
+    right: 64px;
+    bottom: 23px;
+}
+
+.form_section button.add:active{
+    transform: scale(0.95);
+    transition: all ease-in-out 0.1s;
+}
