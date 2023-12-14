@@ -7,3 +7,7 @@ def index(request):
     prod_item = SeaFood.objects.order_by('id')
     return render(request, 'main/index.html', {'prods': prod_item})
 
+
+def add(request):
+    return render(request, 'main/form.html')
+
