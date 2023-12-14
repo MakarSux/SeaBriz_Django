@@ -22,7 +22,7 @@ def add(request):
 
     form = SeaFoodForm()
     context = {'form': form, 'error': error}
-    return render(request, 'main/form.html')
+    return render(request, 'main/form.html', context)
 
 class Delete(DeleteView):
     model = SeaFood
