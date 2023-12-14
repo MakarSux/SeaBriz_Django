@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% block title %}Главная{% endblock %}
 {% block content %}
         <div class="filter">
             <h2 class="filter__name">Фильтрация</h2>
@@ -25,9 +25,9 @@
                 <p class="product__name">{{ el.name }}</p>
                 <p class="product__name">{{ el.quantity }}</p>
                 <div class="produtcs__btns">
-                    <button class="btn btn-danger">Удалить</button>
-                    <button class="btn btn-success">Изменить</button>
-                    <button class="btn btn-warning">В корзину</button>
+                    <a href="{% url 'sea-del' el.id %}"> <button class="btn btn-danger">Удалить</button></a>
+                    <a href="{% url 'sea-update' el.id %}"> <button class="btn btn-success">Изменить</button></a>
+                    <a href="{% url 'home' %}"> <button class="btn btn-warning">В корзину</button></a>
                 </div>
             </div>
             {% endfor %}

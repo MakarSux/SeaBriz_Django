@@ -24,5 +24,14 @@ def add(request):
     context = {'form': form, 'error': error}
     return render(request, 'main/form.html')
 
+class Delete(DeleteView):
+    model = SeaFood
+    success_url = '/'
+    template_name = 'main/sea-del.html'
 
+class Update(UpdateView):
+    model = SeaFood
+    template_name = 'main/form.html'
+    form_class = SeaFoodForm
+    success_url = '/'
 
