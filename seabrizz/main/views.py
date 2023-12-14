@@ -1,7 +1,9 @@
 import os
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import SeaFood
+from .forms import SeaFoodForm
+from django.views.generic import DeleteView, UpdateView
 
 def index(request):
     prod_item = SeaFood.objects.order_by('id')
@@ -9,5 +11,18 @@ def index(request):
 
 
 def add(request):
+    error = ""
+    if request.method == "POST":
+        form = SeaFoodForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            error = "Неверная форма"
+
+    form = SeaFoodForm()
+    context = {'form': form, 'error': error}
     return render(request, 'main/form.html')
+
+
 

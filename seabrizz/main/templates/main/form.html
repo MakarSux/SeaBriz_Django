@@ -3,16 +3,17 @@
 
 {% block content %}
  <div class="form_section">
-             <form action="" class="add__prod">
+             <form  class="add__prod" method="post">
                 <h1 class="form__name">НОВЫЙ ТОВАР</h1>
-                <input type="text" placeholder="НАИМЕНОВАНИЕ">
-                <input type="text" placeholder="Производитель">
-                <input type="text" placeholder="Цена">
-                <textarea name="" id="" placeholder="Описание"></textarea>
-                <input type="text" placeholder="Кол-во">
-                <button class="btn btn-info">ДОБАВИТЬ ФОТО</button>
+                 {% csrf_token %}
+                 {{ form.name }}
+                 {{ form.proiz }}
+                 {{ form.price }}
+                 {{ form.descr }}
+                 {{ form.quantity }}
+                <button class="btn btn-info">ДОБАВИТЬ ФОТО {{ form.photo }}</button>
             </form>
-
-            <button class="add">ДОБАВИТЬ</button>
+            <span>{{ error }}</span>
+            <button class="add" type="submit">ДОБАВИТЬ</button>
         </div>
 {% endblock %}

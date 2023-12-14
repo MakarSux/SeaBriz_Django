@@ -7,5 +7,5 @@ from django.conf.urls.static import static
 
 urlpatterns =[
     path('', views.index, name = "home"),
-    path('/add', views.add, name =  "add")
+    path('add', views.add, name = "add_form")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
