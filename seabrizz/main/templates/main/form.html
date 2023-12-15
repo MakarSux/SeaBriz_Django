@@ -3,7 +3,7 @@
 {% block title %}{% endblock %}
 {% block content %}
  <div class="form_section">
-             <form  class="add__prod" method="post">
+             <form  class="add__prod" method="post" enctype="multipart/form-data">
                 <h1 class="form__name">НОВЫЙ ТОВАР</h1>
                  {% csrf_token %}
                  {{ form.name }}
