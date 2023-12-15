@@ -270,3 +270,44 @@ aside li a:hover{
     transform: scale(0.95);
     transition: all ease-in-out 0.1s;
 }
+
+.content {
+  width: 1442px;
+  margin: 68px auto 175px;
+  font-family: Inter;
+}
+.content h1.content__section-name {
+  text-align: center;
+  color: #000;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 49px;
+}
+
+.content .content__text-about {
+  color: #000;
+  text-align: justify;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 52px; /* 130% */
+}
+.content .content__text-about .content__top-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+.content .content__text-about .content__top-text p:nth-child(2) {
+  width: 954px;
+}
+.content .content__text-about .content__top-text img.top-text__img-bottom {
+  width: 466px;
+}
+.content .content__text-about .content__top-text img.top-text__img-top {
+  display: none;
+}
+.content .content__text-about .content__middle-text {
+  display: flex;
+}

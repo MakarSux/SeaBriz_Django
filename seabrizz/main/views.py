@@ -9,6 +9,11 @@ def index(request):
     prod_item = SeaFood.objects.order_by('id')
     return render(request, 'main/index.html', {'prods': prod_item})
 
+def about(request):
+    return render(request, 'main/about.html')
+
+def shedule(request):
+    return render(request, 'main/shedule.html')
 
 def add(request):
     error = ""
