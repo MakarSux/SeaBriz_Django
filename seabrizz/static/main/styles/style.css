@@ -13,7 +13,7 @@
 aside{
     background: linear-gradient(272deg, rgba(0, 64, 123, 0.72) 3.28%, #0085FF 99.88%);
     width: 260px;
-    height: 100vh;
+    height: 150vh;
 }
 
 header{
@@ -272,25 +272,23 @@ aside li a:hover{
 }
 
 .content {
-  width: 1442px;
-  margin: 68px auto 175px;
+  width: 1400px;
   font-family: Inter;
 }
 .content h1.content__section-name {
   text-align: center;
   color: #000;
   font-family: Inter;
-  font-size: 40px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 300;
-  margin-bottom: 49px;
 }
 
 .content .content__text-about {
   color: #000;
   text-align: justify;
   font-family: Inter;
-  font-size: 40px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 300;
   line-height: 52px; /* 130% */
@@ -299,15 +297,85 @@ aside li a:hover{
   display: flex;
   flex-wrap: wrap;
 }
-.content .content__text-about .content__top-text p:nth-child(2) {
-  width: 954px;
-}
-.content .content__text-about .content__top-text img.top-text__img-bottom {
-  width: 466px;
-}
+
 .content .content__text-about .content__top-text img.top-text__img-top {
   display: none;
 }
+
 .content .content__text-about .content__middle-text {
   display: flex;
+}
+
+.content .content__work-schedule {
+  width: 100%;
+  margin-top: 158px;
+  margin-bottom: 90px;
+  color: #FFF;
+  overflow: hidden;
+}
+.content .content__work-schedule .content__work-schedule__top {
+  position: relative;
+}
+.content .content__work-schedule .content__work-schedule__top img {
+  margin-left: -2px;
+}
+.content .content__work-schedule .content__work-schedule__top h1 {
+  position: absolute;
+  top: 15px;
+  width: 272px;
+  height: 73px;
+  left: calc(50% - 136px);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-align: center;
+  border-radius: 10px;
+  background: #A63B3B;
+  padding: 15px;
+}
+.content .content__work-schedule .content__work-schedule__top .work-schedule__signs {
+  position: absolute;
+  width: 1198px;
+  top: 125px;
+  left: 123px;
+  display: flex;
+  justify-content: space-between;
+}
+.content .content__work-schedule .content__work-schedule__top .work-schedule__signs div {
+  width: 466px;
+  height: 275px;
+  border-radius: 20px;
+  border: 3px solid #CB4900;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.content .content__work-schedule .content__work-schedule__top .work-schedule__signs div h2 {
+  margin: 16px 0 13px;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.content .content__work-schedule .content__work-schedule__top .work-schedule__signs div li {
+  list-style-type: none;
+  width: 285px;
+  display: flex;
+  justify-content: space-between;
+  margin: 2px auto;
+}
+.content .content__work-schedule .content__work-schedule__top .work-schedule__signs div li p {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.content .content__work-schedule .content__work-schedule__bottom {
+  margin-top: -7px;
+  background-color: #000;
+  height: 438px;
+  overflow: hidden;
+}
+.content .content__work-schedule .content__work-schedule__bottom img {
+  opacity: 70%;
 }
