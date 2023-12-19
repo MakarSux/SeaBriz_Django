@@ -3,10 +3,12 @@
 {% block title %}{% endblock %}
 {% block content %}
         <div class="cart__items">
+            {% for item in cart %}
+            {% with product=item.product %}
             <div class="cart__item">
-                <img src="img/cart_fish-one.png" alt="">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'main/img/cart_fish-one.png' %}{% endif %}" alt="">
                 <div class="item__info">
-                    <h3>Филе лосося</h3>
+                    <h3>{{ product.name }}</h3>
                     <div class="quantity">
                         <p>Количество</p>
                         <input type="text">
@@ -25,5 +27,7 @@
                     <div class="pr"></div>
                 </div>
             </div>
+            {% endwith %}
+            {% endfor %}
         </div>
 {% endblock %}
