@@ -2,5 +2,28 @@
 {% load static %}
 {% block title %}{% endblock %}
 {% block content %}
-
+        <div class="cart__items">
+            <div class="cart__item">
+                <img src="img/cart_fish-one.png" alt="">
+                <div class="item__info">
+                    <h3>Филе лосося</h3>
+                    <div class="quantity">
+                        <p>Количество</p>
+                        <input type="text">
+                    </div>
+                    <div class="btns">
+                        <button class="btn btn-info">Обновить</button>
+                        <button class="btn btn-danger">Удалить</button>
+                    </div>
+                    <div class="item__price">
+                        <p>Цена за шт</p>
+                        <div class="ip"></div>
+                    </div>
+                </div>
+                <div class="all_price">
+                    <p>Общая стоимость</p>
+                    <div class="pr"></div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
