@@ -1,10 +1,13 @@
-from django.forms import forms
+from django import forms
 
-PRODUCT_QUANTITY_CHOISES = [(i, str(i)) for i in range(1, 21)]
+from main.models import SeaFood
+from django.forms import TypedChoiceField
+
+PRODUCT_QUANTITY_CHOISES = [(i, str(i)) for i in SeaFood.objects.all()]
 
 class CartAddProdForm(forms.Form):
     quantity = forms.TypedChoiceField(
-        choises=PRODUCT_QUANTITY_CHOISES,
+        empty_value=PRODUCT_QUANTITY_CHOISES,
         coerce=int,
     )
     update = forms.BooleanField(

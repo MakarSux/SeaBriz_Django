@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from main.models import SeaFood
-from .cart import Cart
-from .forms import CartAddProdForm
+from . cart import Cart
+from . forms import CartAddProdForm
 
 @require_POST
 def cart_add(request, product_id):
