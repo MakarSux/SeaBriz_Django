@@ -4,11 +4,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import SeaFood
 from .forms import SeaFoodForm
 from django.views.generic import DeleteView, UpdateView
-from cart.forms import CartAddProductForm
+from cart.forms import CartAddProdForm
 
 def index(request):
     prod_item = SeaFood.objects.order_by('id')
-    return render(request, 'main/index.html', {'prods': prod_item})
+    return render(request, 'main/index.html',
+                  {'prods': prod_item})
 
 def about(request):
     return render(request, 'main/about.html')
@@ -42,7 +43,10 @@ class Update(UpdateView):
     success_url = '/'
 
 def product_detail(request, id, slug):
-    product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    cart_product_form = CartAddProductForm()
-    return render(request, 'main/index.html')
+    product = get_object_or_404(SeaFood, id=id, slug=slug, available=True)
+    cart_product_form = CartAddProdForm()
+    return render(request, 'main/index.html', {
+        'product': product,
+        'cart_product_form': cart_product_form
+    })
 

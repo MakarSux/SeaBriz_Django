@@ -27,9 +27,15 @@
                 <div class="produtcs__btns">
                     <a href="{% url 'sea-del' el.id %}"> <button class="btn btn-danger">Удалить</button></a>
                     <a href="{% url 'sea-update' el.id %}"> <button class="btn btn-success">Изменить</button></a>
-                    <a href="{% url 'home' %}"> <button class="btn btn-warning">В корзину</button></a>
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                        {{ cart_product_form }}
+                        {% csrf_token %}
+                        <button class="btn btn-warning">В корзину</button>
+                    </form>>
                 </div>
             </div>
             {% endfor %}
         </div>
 {% endblock %}
+
+<!--args=[str(self.id)]

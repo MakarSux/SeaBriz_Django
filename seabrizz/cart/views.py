@@ -7,7 +7,7 @@ from . forms import CartAddProdForm
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
-    product = get_object_or_404(SeaFood, id=product_id)
+    product = get_object_or_404(SeaFood, id=product_id) #скорее всего где-то здесь затык =(
     form = CartAddProdForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
