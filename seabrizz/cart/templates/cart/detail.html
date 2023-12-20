@@ -2,32 +2,43 @@
 {% load static %}
 {% block title %}{% endblock %}
 {% block content %}
+
+    <h1>${{ item.get_total_price }}</h1>
+
         <div class="cart__items">
             {% for item in cart %}
             {% with product=item.product %}
             <div class="cart__item">
+                <a href="{{ product.get_absolute_url }}"></a>
                 <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'main/img/cart_fish-one.png' %}{% endif %}" alt="">
                 <div class="item__info">
                     <h3>{{ product.name }}</h3>
-                    <div class="quantity">
-                        <p>Количество</p>
-                        <input type="text">
-                    </div>
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                        <div class="quantity">
+                            <p>Количество</p>
+                            {{ item.update_quantity_form.quantity }}
+                            {{ item.update_quantity_form.update }}
+                            <button type="submit" class="btn btn-info">Обновить</button>
+                            {% csrf_token %}
+                        </div>
+                    </form>
                     <div class="btns">
-                        <button class="btn btn-info">Обновить</button>
-                        <button class="btn btn-danger">Удалить</button>
+                        <a  href="{% url 'cart:cart_remove' product.id %}">
+                            <button class="btn btn-danger">Удалить</button>
+                        </a>
                     </div>
                     <div class="item__price">
                         <p>Цена за шт</p>
-                        <div class="ip"></div>
+                        <div class="ip">${{ item.price }}</div>
                     </div>
                 </div>
                 <div class="all_price">
                     <p>Общая стоимость</p>
-                    <div class="pr"></div>
+                    <div class="pr">${{ item.total_price }}</div>
                 </div>
             </div>
             {% endwith %}
             {% endfor %}
+
         </div>
 {% endblock %}

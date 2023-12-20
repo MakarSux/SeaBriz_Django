@@ -1,5 +1,5 @@
 from .models import SeaFood
-from django.forms import ModelForm, TextInput, Textarea, FileInput
+from django.forms import ModelForm, TextInput, Textarea, FileInput, NumberInput
 
 
 class SeaFoodForm(ModelForm):
@@ -15,7 +15,7 @@ class SeaFoodForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Производиьтель',
             }),
-            'price': TextInput(attrs={
+            'price': NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Цена',
             }),
@@ -23,11 +23,11 @@ class SeaFoodForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Описание',
             }),
-            'quantity': TextInput(attrs={
+            'quantity': NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Количество',
             }),
-            'photo': FileInput(attrs={
-                'class': 'photo_cntrl',
-            })
+           'photo': FileInput(attrs={
+               'class': 'photo_cntrl',
+           })
         }

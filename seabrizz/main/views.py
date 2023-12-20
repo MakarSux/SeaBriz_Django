@@ -1,9 +1,10 @@
 import os
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import SeaFood
 from .forms import SeaFoodForm
 from django.views.generic import DeleteView, UpdateView
+from cart.forms import CartAddProductForm
 
 def index(request):
     prod_item = SeaFood.objects.order_by('id')
@@ -39,4 +40,9 @@ class Update(UpdateView):
     template_name = 'main/form.html'
     form_class = SeaFoodForm
     success_url = '/'
+
+def product_detail(request, id, slug):
+    product = get_object_or_404(Product, id=id, slug=slug, available=True)
+    cart_product_form = CartAddProductForm()
+    return render(request, 'main/index.html')
 

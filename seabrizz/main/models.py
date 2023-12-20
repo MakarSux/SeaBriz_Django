@@ -4,7 +4,7 @@ from django.db import models
 class SeaFood(models.Model):
     name = models.CharField('Наименование', max_length=75)
     proiz = models.CharField('Производиьтель', max_length= 75)
-    price = models.CharField('Цена', max_length=75)
+    price = models.IntegerField('Цена',  default=0)
     descr = models.TextField('Описание')
     photo = models.ImageField(upload_to='images/')
     quantity = models.IntegerField('Количество', default=0)
